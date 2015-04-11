@@ -8,10 +8,9 @@ import f.Set;
 import g.GetPhotosUrl;
 import g.Photo;
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,9 +51,9 @@ String jsonGetList = readUrl("https://api.flickr.com/services/rest/?method=flick
 
 
 
-        FileWriter writer = new FileWriter("C:\\Users\\Moon\\Desktop\\model");
+        File writer = new File("C:\\Users\\Moon\\Desktop\\model");
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new Gson();
 
                 GetCollectionByID fromJsonCollection = gson.fromJson(jsonGetList, GetCollectionByID.class);
 
@@ -370,27 +369,6 @@ if (listCollections.get(i).getSets().get(j).getPhotos().listIterator(photoIndex)
 
 
 
-        ConfigForApp cfgForApp = new ConfigForApp();
-
-        cfgForApp.setIsFirstRun(false);
-
-
-
-
-
-        ScreenApp screenApp = new ScreenApp();
-
-
-
-        screenApp.setH(45);
-        screenApp.setW(45);
-
-
-
-        History history = new History();
-
-
-        history.setBackFwd(false);
 
 
 
@@ -402,10 +380,10 @@ if (listCollections.get(i).getSets().get(j).getPhotos().listIterator(photoIndex)
 
         about.setH1("Timur Uteshbekov");
 
-        about.setPersonal("\u0420\u0430\u0441\u0441\u043a\u0430\u0437 \u043e\u0431 \u0430\u0432\u0442\u043e\u0440\u0435");
-        about.setPreambula("\u041f\u0440\u0435\u0430\u043c\u0431\u0443\u043b\u044c\u043d\u043e\u0435 \u0432\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u0435");
-        about.setQuestions("\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u0438\u043d\u0444\u0430");
-        about.setTitle("\u041e\u0431\u043e \u043c\u043d\u0435");
+        about.setPersonal("Рассказ об авторе");
+        about.setPreambula("Преамбульное вступление");
+        about.setQuestions("Дополнительная инфа");
+        about.setTitle("Обо мне");
 
 
 
@@ -442,8 +420,8 @@ if (listCollections.get(i).getSets().get(j).getPhotos().listIterator(photoIndex)
 
 
 meta.setTitle("Timur Uteshbekov");
-        meta.setDescription("\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435");
-        meta.setImg("\u043f\u0443\u0442\u044c \u0434\u043e \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438");
+        meta.setDescription("Описание");
+        meta.setImg("путь до картинки");
 
 
 
@@ -477,21 +455,17 @@ meta.setTitle("Timur Uteshbekov");
 
 
 
-        flickr.setActiveMQ(1);
-        flickr.setBase_url("url");
-        flickr.setBaseUrl("url");
-        flickr.setDebug(false);
+
         flickr.setIsIphone(false);
         flickr.setIsStart(false);
-        flickr.setPath("pathToModel");
-        flickr.setConfigForApps(cfgForApp);
+        flickr.setPath("/store");
+
 
         flickr.setCopies(copy);
 
         flickr.setMetaArrayList(meta);
 
-        flickr.setHistories(history);
-        flickr.setScreenApps(screenApp);
+
 
 
 
@@ -504,10 +478,22 @@ meta.setTitle("Timur Uteshbekov");
 
         String jsonToFile = gson.toJson(flickrJson);
 
-        writer.write(jsonToFile);
 
-        writer.flush();
-        writer.close();
+
+        Writer out = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(writer), "UTF8"));
+
+
+
+
+        out.append("var MODEL = ");
+        out.append(jsonToFile);
+        out.append(";");
+        out.flush();
+        out.close();
+
+
+
 
 
     }

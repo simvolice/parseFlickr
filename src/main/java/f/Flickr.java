@@ -17,17 +17,9 @@ public class Flickr {
 
 
 
-    @Expose
-    private Integer activeMQ;
 
-    @Expose
-    private String baseUrl;
 
-    @Expose
-    private String base_url;
 
-    @Expose
-    private Boolean debug;
 
 
     @Expose
@@ -41,10 +33,7 @@ public class Flickr {
     private String path;
 
 
-    @SerializedName("config")
-    @Expose
-    private
-    ConfigForApp configForApps = new ConfigForApp();
+
 
 
 
@@ -54,10 +43,6 @@ public class Flickr {
     Copy copies = new Copy();
 
 
-    @SerializedName("history")
-    @Expose
-    private
-   History histories = new History();
 
     @SerializedName("meta")
     @Expose
@@ -65,10 +50,7 @@ public class Flickr {
     Meta  metaArrayList = new Meta();
 
 
-    @SerializedName("screen")
-    @Expose
-    private
-    ScreenApp screenApps = new ScreenApp();
+
 
 
 
@@ -106,37 +88,8 @@ public class Flickr {
         this.starts = starts;
     }
 
-    public Integer getActiveMQ() {
-        return activeMQ;
-    }
 
-    public void setActiveMQ(Integer activeMQ) {
-        this.activeMQ = activeMQ;
-    }
 
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
-    }
-
-    public String getBase_url() {
-        return base_url;
-    }
-
-    public void setBase_url(String base_url) {
-        this.base_url = base_url;
-    }
-
-    public Boolean isDebug() {
-        return debug;
-    }
-
-    public void setDebug(Boolean debug) {
-        this.debug = debug;
-    }
 
     public Boolean isIphone() {
         return isIphone;
@@ -162,13 +115,6 @@ public class Flickr {
         this.path = path;
     }
 
-    public ConfigForApp getConfigForApps() {
-        return configForApps;
-    }
-
-    public void setConfigForApps(ConfigForApp configForApps) {
-        this.configForApps = configForApps;
-    }
 
     public Copy getCopies() {
         return copies;
@@ -178,13 +124,6 @@ public class Flickr {
         this.copies = copies;
     }
 
-    public History getHistories() {
-        return histories;
-    }
-
-    public void setHistories(History histories) {
-        this.histories = histories;
-    }
 
     public Meta getMetaArrayList() {
         return metaArrayList;
@@ -194,11 +133,5 @@ public class Flickr {
         this.metaArrayList = metaArrayList;
     }
 
-    public ScreenApp getScreenApps() {
-        return screenApps;
-    }
 
-    public void setScreenApps(ScreenApp screenApps) {
-        this.screenApps = screenApps;
-    }
 }
