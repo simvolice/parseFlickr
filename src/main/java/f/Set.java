@@ -31,6 +31,10 @@ public class Set  {
     @Expose
     private String title;
 
+    @Expose
+    private String title2;
+
+
     /**
      * 
      * @return
@@ -175,4 +179,11 @@ public class Set  {
         this.title = title;
     }
 
+    public String getTitle2() {
+        return title2;
+    }
+
+    public void setTitle2(String title2) {
+        this.title2 = title2;
+    }
 }

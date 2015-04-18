@@ -19,7 +19,11 @@ public class About {
 
 
     @Expose
-    private String preambula;
+    private String preamble;
+
+
+    @Expose
+    private String inquiries;
 
 
     @Expose
@@ -51,11 +55,11 @@ public class About {
     }
 
     public String getPreambula() {
-        return preambula;
+        return preamble;
     }
 
-    public void setPreambula(String preambula) {
-        this.preambula = preambula;
+    public void setPreambula(String preamble) {
+        this.preamble = preamble;
     }
 
     public String getTitle() {
@@ -64,5 +68,13 @@ public class About {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getInquiries() {
+        return inquiries;
+    }
+
+    public void setInquiries(String inquiries) {
+        this.inquiries = inquiries;
     }
 }

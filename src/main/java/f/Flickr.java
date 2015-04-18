@@ -13,52 +13,7 @@ public class Flickr {
     @Expose
     private List<Photo> photos = new ArrayList<Photo>();
     @Expose
-    private Start starts = new Start();
-
-
-
-
-
-
-
-
-    @Expose
-    private Boolean isIphone;
-
-    @Expose
-    private Boolean isStart;
-
-
-    @Expose
-    private String path;
-
-
-
-
-
-
-    @SerializedName("copy")
-    @Expose
-    private
-    Copy copies = new Copy();
-
-
-
-    @SerializedName("meta")
-    @Expose
-    private
-    Meta  metaArrayList = new Meta();
-
-
-
-
-
-
-
-
-
-
-
+    private Start start = new Start();
 
 
     /**
@@ -81,57 +36,16 @@ public class Flickr {
 
 
     public Start getStarts() {
-        return starts;
+        return start;
     }
 
-    public void setStarts(Start starts) {
-        this.starts = starts;
-    }
-
-
-
-
-    public Boolean isIphone() {
-        return isIphone;
-    }
-
-    public void setIsIphone(Boolean isIphone) {
-        this.isIphone = isIphone;
-    }
-
-    public Boolean isStart() {
-        return isStart;
-    }
-
-    public void setIsStart(Boolean isStart) {
-        this.isStart = isStart;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
+    public void setStarts(Start start) {
+        this.start = start;
     }
 
 
-    public Copy getCopies() {
-        return copies;
-    }
-
-    public void setCopies(Copy copies) {
-        this.copies = copies;
-    }
 
 
-    public Meta getMetaArrayList() {
-        return metaArrayList;
-    }
-
-    public void setMetaArrayList(Meta metaArrayList) {
-        this.metaArrayList = metaArrayList;
-    }
 
 
 }

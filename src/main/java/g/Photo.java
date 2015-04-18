@@ -48,15 +48,15 @@ public class Photo {
 
 
 
-    @SerializedName("url_b")
+    @SerializedName("url_h")
     @Expose
-    private String urlB;
-    @SerializedName("height_b")
+    private String urlH;
+    @SerializedName("height_h")
     @Expose
-    private String heightB;
-    @SerializedName("width_b")
+    private String heightH;
+    @SerializedName("width_h")
     @Expose
-    private String widthB;
+    private String widthH;
 
     /**
      * 
@@ -298,27 +298,27 @@ public class Photo {
         this.widthK = widthK;
     }
 
-    public String getUrlB() {
-        return urlB;
+    public String getUrlH() {
+        return urlH;
     }
 
-    public void setUrlB(String urlB) {
-        this.urlB = urlB;
+    public void setUrlH(String urlH) {
+        this.urlH = urlH;
     }
 
-    public String getHeightB() {
-        return heightB;
+    public String getHeightH() {
+        return heightH;
     }
 
-    public void setHeightB(String heightB) {
-        this.heightB = heightB;
+    public void setHeightH(String heightH) {
+        this.heightH = heightH;
     }
 
-    public String getWidthB() {
-        return widthB;
+    public String getWidthH() {
+        return widthH;
     }
 
-    public void setWidthB(String widthB) {
-        this.widthB = widthB;
+    public void setWidthH(String widthH) {
+        this.widthH = widthH;
     }
 }
